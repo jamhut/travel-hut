@@ -6,7 +6,7 @@
   display: inline-block;    /* tell parent & surrounding elements about its needs for padding */
 
   &__orange {               /* underscores and dashes must match the html file */
-     background-color: $anOrange;
+     background-color: $mainOrange;
   }
 
   &__wider {
