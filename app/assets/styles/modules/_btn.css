@@ -1,0 +1,18 @@
+.btn {
+  background-color: $mainBlue;
+  color: #FFF;              /* white */
+  text-decoration: none;    /* remove the underline */
+  padding: .75rem 1.05rem;  /* .75 vertical   1.05 horizontal */
+  display: inline-block;    /* tell parent & surrounding elements about its needs for padding */
+
+  &__orange {               /* underscores and dashes must match the html file */
+     background-color: $anOrange;
+  }
+
+  &__wider {
+  	 font-size: 1.15rem;
+    padding: 1.1rem 1.5rem;  /* vert horiz */
+  }
+
+}
+
