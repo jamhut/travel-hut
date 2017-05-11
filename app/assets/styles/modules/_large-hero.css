@@ -2,7 +2,7 @@
 	position: relative;
   border-bottom: 10px solid $mainBlue ;
 
-   &__title {
+   &--title {
       font-weight: 300;
       color: $mainBlue;
       margin: 0;
@@ -19,7 +19,7 @@
       }
    }
 
-   &__subtitle {
+   &--subtitle {
       font-weight: 300;
       color: $mainBlue;
       margin: 0;
@@ -35,7 +35,7 @@
       }
    }
 
-   &__description {
+   &--description {
       font-weight: 100;
       color: #FFF;
       font-size: 1.6rem;
@@ -48,7 +48,7 @@
       }
    }
 
-   &__text-content {
+   &--text-content {
       position: absolute;
       transform: translateY(-50%);
       top: 50%;
@@ -57,7 +57,7 @@
       text-align: center;
    }
 
-   &__image {
+   &--image {
      display: block;
    }
 }

@@ -5,11 +5,11 @@
   padding: .75rem 1.05rem;  /* .75 vert   1.05 horiz */
   display: inline-block;    /* tell parent & surrounding elements about its needs for padding */
 
-  &__orange {               /* underscores and dashes must match the html file */
+  &--orange {               /* underscores and dashes must match the html file */
      background-color: $mainOrange;
   }
 
-  &__wider {
+  &--wider {
     @mixin atSmall {
       font-size: 1.15rem;
     }
