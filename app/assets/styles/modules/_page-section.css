@@ -1,8 +1,8 @@
 .page-section {
 
-  padding: 0.5rem 0;           /* vert horiz */
+  padding: 0.5rem 0;    /* vert horiz */
 
-  @mixin atMedium {
+  @mixin atMedium {     /* devices larger than small */
     padding: 4rem 0;
   }
 

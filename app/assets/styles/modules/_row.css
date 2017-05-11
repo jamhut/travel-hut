@@ -1,0 +1,49 @@
+.row {
+
+  @mixin clearfix;
+
+  /* throw up a color to help debug
+  background-color: yellow;
+  */
+
+  &--gutters {
+    padding-right: -65px;
+  }
+
+  &--gutters > div {
+    padding-right: 65px;
+
+    /* We could put box-sizing border-box here, and it works fine,
+       but brad said it can also work at the global level so, we
+       moved the netx line into _global.css
+    box-sizing: border-box;
+    */
+  }
+
+  &__b-margin-until-medium {
+     margin-bottom: 1rem;
+  }
+
+  @mixin atMedium {
+
+    &__b-margin-until-medium {
+     margin-bottom: 0;
+    }
+
+    &__medium-4 {
+      float: left;
+      width: 33.33%;
+    }
+    &__medium-4--larger {
+        width: 37%;
+    }
+    &__medium-8 {
+      float: left;
+      width: 66.66%;
+    }
+    &__medium-8--smaller {
+      width: 63%;
+    }
+  }
+
+}

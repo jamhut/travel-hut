@@ -1,7 +1,11 @@
 .wrapper {
-  padding-left: 14px;
-  padding-right: 14px;
-  max-width: 1200px;
+  /* a temp color can help us debug by showing some edges *
+    background-color: green;
+  */
+  overflow: hidden;  /* hide things that land 'out of bounds' */
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1230px;
   margin-left: auto;
   margin-right: auto;
 
@@ -9,8 +13,18 @@
     max-width: 900px;
   }
 
+  &--b-margin {
+    padding-bottom: 1.5rem;
+    @mixin atMedium {
+      padding-bottom: 3.4rem;
+    }
+    @mixin atSmall {
+      padding-bottom: 2.3rem;
+    }
+  }
+
   /* a wrapper within another wrapper *
-   * does not need extra padding      */
+   * does not need EXTRA padding      */
   .wrapper {
   	padding-left: 0;
   	padding-right: 0;

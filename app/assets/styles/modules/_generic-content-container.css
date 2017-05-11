@@ -1,0 +1,15 @@
+.generic-content-container {
+
+  /* p is a type selector */
+  p {
+  	 line-height: 1.5;
+    font-size: 1.1rem;
+  	 margin: 1.65rem 0;  /* vert horiz */
+  }
+
+  /* p a is a descendent selector */
+  p a {
+  	font-weight: 700;
+  }
+
+}
