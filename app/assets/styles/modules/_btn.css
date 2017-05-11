@@ -2,7 +2,7 @@
   background-color: $mainBlue;
   color: #FFF;              /* white */
   text-decoration: none;    /* remove the underline */
-  padding: .75rem 1.05rem;  /* .75 vertical   1.05 horizontal */
+  padding: .75rem 1.05rem;  /* .75 vert   1.05 horiz */
   display: inline-block;    /* tell parent & surrounding elements about its needs for padding */
 
   &__orange {               /* underscores and dashes must match the html file */

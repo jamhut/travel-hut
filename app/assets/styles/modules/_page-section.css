@@ -1,5 +1,5 @@
 .page-section {
-  padding: 4rem 0; /* horiz vert */
+  padding: 4rem 0; /* vert horiz */
 
   &__blue {
     background-color: $mainBlue;
