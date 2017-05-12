@@ -2,9 +2,11 @@
 
   /* p is a type selector */
   p {
-  	 line-height: 1.5;
+  	line-height: 1.5;
     font-size: 1.1rem;
-  	 margin: 1.65rem 0;  /* vert horiz */
+    font-weight: 100;
+  /*margin: 1.65rem 0;       * vert horiz */
+    margin: 0 0 1.65rem 0;  /* top right bottom left */
   }
 
   /* p a is a descendent selector */
