@@ -407,7 +407,7 @@ a {
         font-size: 2.3rem
    }
   }
-@media(min-width: 1200px) {
+@media(min-width: 1010px) {
 .large-hero__subtitle {
         font-size: 2.9rem
    }
@@ -479,6 +479,16 @@ a {
       padding-right: 15px
   }
   }
+.wrapper--no-padding-until-large {
+    padding-left: 0;
+    padding-right: 0;
+  }
+@media(min-width: 1010px) {
+.wrapper--no-padding-until-large {
+      padding-left: 15px;
+      padding-right: 15px
+  }
+  }
 .wrapper .wrapper {
     padding-left: 0;
     padding-right: 0;
@@ -508,7 +518,7 @@ a {
 .page-section--testimonials {
     background-color: #e0e6ef;
   }
-@media(min-width: 800px) {
+@media(min-width: 1010px) {
 .page-section--testimonials {
       background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
         background-size: cover /* cover the div that contains it */
@@ -517,6 +527,14 @@ a {
 .page-section--blue {
     background-color: #2f5572;
     color: #FFF;
+  }
+.page-section--no-b-padding-until-large {
+    padding-bottom: 0;
+  }
+@media(min-width: 1010px) {
+.page-section--no-b-padding-until-large {
+      padding-bottom: 4rem
+  }
   }
 .page-section--no-b-padding-until-medium {
     padding-bottom: 0;
@@ -627,7 +645,49 @@ a {
       display: flex
   }
   }
+.row--equal-height-at-large > div {
+      float: none;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+@media(min-width: 1010px) {
+.row--equal-height-at-large {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex
+  }
+  }
 /* Begin Equal Height Rules */
+@media(min-width: 1010px) {
+
+    .row__b-margin-until-large {
+      margin-bottom: 0;
+    }
+
+    .row__large-4 {
+      float: left;
+      width: 33.33%;
+    }
+
+    .row__large-4--larger {
+      width: 37%;
+    }
+
+    .row__large-6 {
+      float: left;
+      width: 50%;
+    }
+
+    .row__large-8 {
+      float: left;
+      width: 66.66%;
+    }
+
+    .row__large-8--smaller {
+      width: 63%;
+    }
+  }
 @media(min-width: 800px) {
 
     .row__b-margin-until-medium {
@@ -782,11 +842,20 @@ a {
     border: 6px solid rgba(255, 255, 255, .66) ;
      /* this border shrinks the photo or crops it and tracks along the radius */
   }
+@media(min-width: 1010px) {
+.testimonial {
+    padding: 0 1.375rem 1px 1.375rem;
+    margin-bottom: 0
+
+}
+  }
 @media(min-width: 800px) {
 .testimonial {
-    margin-bottom: 0;      /* <--- Prevent the longest testimonial *
-                                 from extending beyond the others. */
-    padding: 0 1.375rem 1px 1.375rem
+    padding: 0 1.375rem 1px 1.375rem;
+    margin-bottom: 0      /* <--- Make sure the white background *
+                                   testimonial from extending *
+                                   beyond the others in       *
+                                   medium size and larger.    */
 
 }
   }
