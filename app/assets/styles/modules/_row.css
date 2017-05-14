@@ -2,6 +2,10 @@
 
   @mixin clearfix;
 
+  &--t-padding {
+    padding-top: 80px;
+  }
+
   /* throw up a color to help debug
   background-color: yellow;
   */
@@ -14,6 +18,10 @@
     margin-right: -100px;
   }
 
+  &--gutters-small {
+    margin-right: -45px;
+  }
+
   &--gutters > div {
     padding-right: 65px;
   }
@@ -22,8 +30,12 @@
     padding-right: 100px;
   }
 
+  &--gutters-small > div {
+    padding-right: 45px;
+  }
+
     /*
-       We could put "box-sizing: border-box;" here,
+       We could have put "box-sizing: border-box;" here,
        and it works, but Brad said it also works at the
        global level so, we added that into _global.css.
     */
@@ -59,6 +71,19 @@
 
     &__medium-8--smaller {
       width: 63%;
+    }
+
+  }
+
+  /* Begin Equal Height Rules */
+  &--equal-height-at-medium {
+    @mixin atMedium {
+      display: flex;
+    }
+
+    & > div {
+      float: none;
+      display: flex;
     }
   }
 

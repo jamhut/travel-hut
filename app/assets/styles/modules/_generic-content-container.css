@@ -2,16 +2,19 @@
 
   /* p is a type selector */
   p {
-  	line-height: 1.5;
-    font-size: 1.1rem;
     font-weight: 100;
-  /*margin: 1.65rem 0;       * vert horiz */
+    line-height: 1.5;
     margin: 0 0 1.65rem 0;  /* top right bottom left */
+  /*margin: 1.65rem 0;       * vert horiz */
+
+    @mixin atSmall {
+      font-size: 1.1rem;
+    }
   }
 
   /* p a is a descendent selector */
   p a {
-  	font-weight: 700;
+    font-weight: 700;
   }
 
 }

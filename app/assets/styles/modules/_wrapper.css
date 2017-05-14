@@ -26,8 +26,17 @@
   /* a wrapper within another wrapper *
    * does not need EXTRA padding      */
   .wrapper {
-  	padding-left: 0;
-  	padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
+  &--no-padding-until-medium {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atMedium {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
 }

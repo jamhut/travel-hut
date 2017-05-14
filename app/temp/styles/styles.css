@@ -370,28 +370,17 @@ img {
             box-sizing: border-box;
 }
 a {
-	color: #d59541;
+  color: #d59541;
 }
 .large-hero {
-	position: relative;
   border-bottom: 10px solid #2f5572;
+  position: relative;
+
 }
-.large-hero--image {
-     display: block;
-   }
-.large-hero--text-content {
-      position: absolute;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
-      top: 50%;
-      left: 0;
-      width: 100%;
-      text-align: center;
-   }
 .large-hero--description {
-      font-weight: 100;
       color: #FFF;
       font-size: 1.6rem;
+      font-weight: 100;
       text-shadow: 2px 2px 0 rgba(0,0,0 .1);
       max-width: 26rem;
       margin-left: auto;
@@ -402,49 +391,52 @@ a {
         font-size: 1.8rem
    }
   }
-.large-hero--subtitle {
+.large-hero__subtitle {
       font-weight: 300;
       color: #2f5572;
-      margin: 0;
       font-size: 1.3rem;
+      margin: 0;
    }
 @media(min-width: 600px) {
-.large-hero--subtitle {
+.large-hero__subtitle {
         font-size: 1.7rem
    }
   }
 @media(min-width: 800px) {
-.large-hero--subtitle {
+.large-hero__subtitle {
         font-size: 2.3rem
    }
   }
 @media(min-width: 1200px) {
-.large-hero--subtitle {
+.large-hero__subtitle {
         font-size: 2.9rem
    }
   }
-.large-hero--title {
+.large-hero__title {
       font-weight: 300;
       color: #2f5572;
       margin: 0;
-
       font-size: 2.2rem;
+
    }
 @media(min-width: 600px) {
-.large-hero--title {
-        font-size: 3rem
+.large-hero__title {
+        font-size: 3.0rem
+
    }
   }
-@media(min-width: 800px) {
-.large-hero--title {
-        font-size: 4.4rem
+.large-hero__text-content {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      left: 0;
+      width: 100%;
+      text-align: center;
    }
-  }
-@media(min-width: 1200px) {
-.large-hero--title {
-        font-size: 4.8rem
+.large-hero__image {
+     display: block;
    }
-  }
 .btn {
   background-color: #2f5572;
   color: #FFF;              /* white */
@@ -454,13 +446,14 @@ a {
 
 }
 .btn--wider {
-    padding: 1.1rem 1.5rem;  /* vert horiz */
+    padding: 1.1rem 1.5rem;
   }
 @media(min-width: 600px) {
 .btn--wider {
-      font-size: 1.15rem;
+      font-size: 1.15rem
   }
   }
+/* vert horiz */
 .btn--orange {               /* underscores and dashes must match the html file */
      background-color: #d59541;
   }
@@ -475,11 +468,20 @@ a {
   max-width: 1230px;
   margin-left: auto;
   margin-right: auto;
-
 }
+.wrapper--no-padding-until-medium {
+    padding-left: 0;
+    padding-right: 0;
+  }
+@media(min-width: 800px) {
+.wrapper--no-padding-until-medium {
+      padding-left: 15px;
+      padding-right: 15px
+  }
+  }
 .wrapper .wrapper {
-  	padding-left: 0;
-  	padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 /* a wrapper within another wrapper *
    * does not need EXTRA padding      */
@@ -500,13 +502,29 @@ a {
     max-width: 900px;
   }
 .page-section {
-
   padding: 0.5rem 0;
 
 }
+.page-section--testimonials {
+    background-color: #e0e6ef;
+  }
+@media(min-width: 800px) {
+.page-section--testimonials {
+      background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+        background-size: cover /* cover the div that contains it */
+  }
+  }
 .page-section--blue {
     background-color: #2f5572;
     color: #FFF;
+  }
+.page-section--no-b-padding-until-medium {
+    padding-bottom: 0;
+  }
+@media(min-width: 800px) {
+.page-section--no-b-padding-until-medium {
+      padding-bottom: 4rem
+  }
   }
 @media(min-width: 800px) {
 .page-section {     /* devices larger than small */
@@ -520,10 +538,6 @@ a {
   font-size: 1.8rem;
   font-weight: 300;
   text-align: center;
-/*
-  margin-left: auto;
-  margin-right: auto;
-*/
 
 }
 .section-title__icon {
@@ -534,14 +548,19 @@ a {
   }
 @media(min-width: 600px) {
 .section-title__icon {
+      position: relative;
+      top: 13px;
       margin-right: 0.5rem;
       margin-left: 0;
       margin-bottom: 0;
       display: inline-block
   }
   }
+.section-title--blue {
+    color: #2f5572;
+  }
 .section-title strong {
-  	 font-weight: 600;
+    font-weight: 600;
   }
 @media(min-width: 600px) {
 .section-title {
@@ -550,48 +569,65 @@ a {
 }
   }
 .headline {
-  font-weight: 300;
   font-size: 1.5rem;
+  font-weight: 300;
   color: #2f5572;
 
 }
-.headline--no-t-margine {
+.headline--no-t-margin {
     margin-top: 0;
   }
-.headline--narrow {
-  	  max-width: 500px;
-  	  margin-left: auto;
-  	  margin-right: auto;
+.headline--bot_margin_lg {
+    margin-bottom: 1.8em;
   }
-.headline--centered {
-     text-align: center;
+.headline--bot_margin_sm {
+    margin-bottom: .5em;
   }
-.headline--bot_margine_lg {
-     margin-bottom: 1.8em;
-  }
-.headline--bot_margine_sm {
-     margin-bottom: .5em;
-  }
-.headline--orange {
-     color: #d59541;
+.headline strong {
+    font-weight: 400;
   }
 .headline--light {
      font-weight: 100;
   }
+.headline--narrow {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+  }
 .headline--small {
      font-size: 1.33rem;
   }
-@media(min-width: 800px) {
+@media(min-width: 600px) {
 .headline--small {
        font-size: 2.2rem
   }
   }
-@media(min-width: 800px) {
+.headline--orange {
+     color: #d59541;
+  }
+.headline--centered {
+     text-align: center;
+  }
+@media(min-width: 600px) {
 .headline {
     font-size: 2.5rem
 
 }
   }
+.row--equal-height-at-medium > div {
+      float: none;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+@media(min-width: 800px) {
+.row--equal-height-at-medium {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex
+  }
+  }
+/* Begin Equal Height Rules */
 @media(min-width: 800px) {
 
     .row__b-margin-until-medium {
@@ -625,15 +661,21 @@ a {
     margin-bottom: 1rem;
   }
 /*
-       We could put "box-sizing: border-box;" here,
+       We could have put "box-sizing: border-box;" here,
        and it works, but Brad said it also works at the
        global level so, we added that into _global.css.
     */
+.row--gutters-small > div {
+    padding-right: 45px;
+  }
 .row--gutters-large > div {
     padding-right: 100px;
   }
 .row--gutters > div {
     padding-right: 65px;
+  }
+.row--gutters-small {
+    margin-right: -45px;
   }
 .row--gutters-large {
     margin-right: -100px;
@@ -644,22 +686,29 @@ a {
 /* throw up a color to help debug
   background-color: yellow;
   */
+.row--t-padding {
+    padding-top: 80px;
+  }
 .row::after {
-  	 content: "";
-  	 clear: both;
+    content: "";
+    clear: both;
     display: table;
   }
 .generic-content-container p a {
-  	font-weight: 700;
+    font-weight: 700;
   }
 /* p a is a descendent selector */
 .generic-content-container p {
-  	line-height: 1.5;
-    font-size: 1.1rem;
     font-weight: 100;
-  /*margin: 1.65rem 0;       * vert horiz */
+    line-height: 1.5;
     margin: 0 0 1.65rem 0;  /* top right bottom left */
   }
+@media(min-width: 600px) {
+.generic-content-container p {
+      font-size: 1.1rem
+  }
+  }
+/*margin: 1.65rem 0;       * vert horiz */
 /* p is a type selector */
 .feature-item {
   position: relative;
@@ -668,15 +717,15 @@ a {
 .feature-item__title {
     font-size: 1.5rem;
     font-weight: 200;
-    margin-bottom: .9rem;
     margin-top: .7em;
+    margin-bottom: .9rem;
     text-align: center;
   }
 @media(min-width: 600px) {
 .feature-item__title {
       text-align: left;
-      font-size: 1.6rem;
-      margin-top: 1em
+      margin-top: 1em;
+      font-size: 1.6rem
   }
   }
 .feature-item__icon {
@@ -694,4 +743,53 @@ a {
     padding-left: 96px
 }
   }
+.testimonial {
+
+  background-color: rgba(255, 255, 255, .66);
+  padding: 0 15px 1px 15px;
+  margin-bottom: 95px;
+
+}
+.testimonial--last {
+    margin-bottom: 0;
+  }
+.testimonial__subtitle {
+    color: #d59541;
+    font-size: .75rem;
+    font-weight: 400;
+    text-align: center;
+    margin: .5rem 0 1rem 0; /* top right bottom left */
+  }
+.testimonial__title {
+    color: #2f5572;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 201;
+    margin: 0;
+  }
+.testimonial__photo {
+    border-radius: 80px;       /* 1/2 the photo width     */
+    overflow: hidden;          /* reveal rounded corners! */
+    width: 160px;              /* actual size */
+    height: 160px;             /* actual size */
+    margin: 0 auto -80px auto; /* top rt bot left
+        Using minus 80 here allows the contanier to shrink by
+        that amount, and that allows the remaining contents
+        below to come closer to the bottom of the photo  */
+    position: relative;       /* within its container */
+    top: -80px ;              /* align the element up above *
+                                 the top of its container   */
+    border: 6px solid rgba(255, 255, 255, .66) ;
+     /* this border shrinks the photo or crops it and tracks along the radius */
+  }
+@media(min-width: 800px) {
+.testimonial {
+    margin-bottom: 0;      /* <--- Prevent the longest testimonial *
+                                 from extending beyond the others. */
+    padding: 0 1.375rem 1px 1.375rem
+
+}
+  }
+/* 80 + 15 = half the photo width + the padding
+                          in use on other elements in the project */
 

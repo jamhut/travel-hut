@@ -1,0 +1,49 @@
+.testimonial {
+
+  background-color: rgba(255, 255, 255, .66);
+  padding: 0 15px 1px 15px;
+  margin-bottom: 95px; /* 80 + 15 = half the photo width + the padding
+                          in use on other elements in the project */
+  @mixin atMedium {
+    margin-bottom: 0;      /* <--- Prevent the longest testimonial *
+                                 from extending beyond the others. */
+    padding: 0 1.375rem 1px 1.375rem;
+  }
+
+  &__photo {
+    border-radius: 80px;       /* 1/2 the photo width     */
+    overflow: hidden;          /* reveal rounded corners! */
+    width: 160px;              /* actual size */
+    height: 160px;             /* actual size */
+    margin: 0 auto -80px auto; /* top rt bot left
+        Using minus 80 here allows the contanier to shrink by
+        that amount, and that allows the remaining contents
+        below to come closer to the bottom of the photo  */
+    position: relative;       /* within its container */
+    top: -80px ;              /* align the element up above *
+                                 the top of its container   */
+    border: 6px solid rgba(255, 255, 255, .66) ;
+     /* this border shrinks the photo or crops it and tracks along the radius */
+  }
+
+  &__title {
+    color: $mainBlue;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 201;
+    margin: 0;
+  }
+
+  &__subtitle {
+    color: $mainOrange;
+    font-size: .75rem;
+    font-weight: 400;
+    text-align: center;
+    margin: .5rem 0 1rem 0; /* top right bottom left */
+  }
+
+  &--last {
+    margin-bottom: 0;
+  }
+
+}
