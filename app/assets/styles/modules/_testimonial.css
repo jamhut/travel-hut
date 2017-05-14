@@ -5,9 +5,16 @@
   margin-bottom: 95px; /* 80 + 15 = half the photo width + the padding
                           in use on other elements in the project */
   @mixin atMedium {
-    margin-bottom: 0;      /* <--- Prevent the longest testimonial *
-                                 from extending beyond the others. */
     padding: 0 1.375rem 1px 1.375rem;
+    margin-bottom: 0;      /* <--- Make sure the white background *
+                                   testimonial from extending *
+                                   beyond the others in       *
+                                   medium size and larger.    */
+  }
+
+  @mixin atLarge {
+    padding: 0 1.375rem 1px 1.375rem;
+    margin-bottom: 0;
   }
 
   &__photo {
