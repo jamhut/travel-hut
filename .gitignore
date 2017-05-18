@@ -15,6 +15,7 @@ node_modules/
 # OS or Editor folders
 .DS_Store
 Thumbs.db
+a
 .cache
 .project
 .settings
@@ -27,3 +28,4 @@ nbproject
 .komodotools
 _notes
 dwsync.xml
+
