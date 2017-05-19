@@ -357,6 +357,8 @@ template {
 [hidden] {
   display: none;
 }
+/* dec:  47,  85, 114 */
+/* dec: 213, 149,  65 */
 body {
   font-family: 'Roboto', sans-serif ;
   color: #333 ;
@@ -426,6 +428,7 @@ a {
    }
   }
 .large-hero__text-content {
+      padding-top: 50px;
       position: absolute;
       top: 50%;
       -webkit-transform: translateY(-50%);
@@ -434,6 +437,11 @@ a {
       width: 100%;
       text-align: center;
    }
+@media(min-width: 800px) {
+.large-hero__text-content {
+        padding-top: 70px
+   }
+  }
 .large-hero__image {
      display: block;
    }
@@ -946,5 +954,85 @@ a {
     margin-bottom: 0;
     margin-right: 2.5rem
   }
+  }
+.site-header {
+  padding: 10px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+}
+.site-header__menu_content {
+    display: none;
+  }
+@media(min-width: 800px) {
+.site-header__menu_content {
+      display: block
+  }
+  }
+.site-header__menu-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #FFF;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+@media(min-width: 800px) {
+.site-header__menu-icon {
+      display: none
+  }
+  }
+.site-header__logo__graphic {
+    text-indent: -9999px;
+  }
+.site-header__logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%) scale(.75);
+            transform: translateX(-50%) scale(.75);
+    /* by default, the transform-origin is set at 50% 50%,
+       which maintains the ctr of a thing in its "original" loc. */
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+    background-color: #2f5572;
+    padding: 28px 35px;
+  }
+@media(min-width: 800px) {
+.site-header__logo {
+      left: auto;
+      -webkit-transform: translateX(0);
+              transform: translateX(0)
+  }
+  }
+.site-header__btn-container {
+    float: right;
+  }
+@media(min-width: 800px) {
+.site-header {
+    background-color: rgba(47,85,114, 0.27)
+
+}
+  }
+.primary-nav a {
+  	 color: #FFF;
+  	 font-weight: 100;
+  	 text-decoration: none;
+  	 display: block;
+  	 padding-top: 15px ;
+  }
+.primary-nav li {
+  	 list-style: none;
+    float: left;
+  	 padding-right: 25px;
+  }
+.primary-nav ul {
+  	 margin: 0;
+  	 padding: 0;
+  	 @mixin: clearfix;
+  }
+.primary-nav--pull-right {
+    float: right;
   }
 
