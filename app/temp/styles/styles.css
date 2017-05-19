@@ -379,54 +379,9 @@ a {
   position: relative;
 
 }
-.large-hero--description {
-      color: #FFF;
-      font-size: 1.6rem;
-      font-weight: 100;
-      text-shadow: 2px 2px 0 rgba(0,0,0 .1);
-      max-width: 26rem;
-      margin-left: auto;
-      margin-right: auto;
+.large-hero__image {
+     display: block;
    }
-@media(min-width: 600px) {
-.large-hero--description {
-        font-size: 1.8rem
-   }
-  }
-.large-hero__subtitle {
-      font-weight: 300;
-      color: #2f5572;
-      font-size: 1.3rem;
-      margin: 0;
-   }
-@media(min-width: 600px) {
-.large-hero__subtitle {
-        font-size: 1.7rem
-   }
-  }
-@media(min-width: 800px) {
-.large-hero__subtitle {
-        font-size: 2.3rem
-   }
-  }
-@media(min-width: 1010px) {
-.large-hero__subtitle {
-        font-size: 2.9rem
-   }
-  }
-.large-hero__title {
-      font-weight: 300;
-      color: #2f5572;
-      margin: 0;
-      font-size: 2.2rem;
-
-   }
-@media(min-width: 600px) {
-.large-hero__title {
-        font-size: 3.0rem
-
-   }
-  }
 .large-hero__text-content {
       padding-top: 50px;
       position: absolute;
@@ -442,9 +397,54 @@ a {
         padding-top: 70px
    }
   }
-.large-hero__image {
-     display: block;
+.large-hero__title {
+      font-weight: 300;
+      color: #2f5572;
+      margin: 0;
+      font-size: 2.2rem;
+
    }
+@media(min-width: 600px) {
+.large-hero__title {
+        font-size: 3.0rem
+
+   }
+  }
+.large-hero__subtitle {
+      font-weight: 300;
+      color: #2f5572;
+      font-size: 1.3rem;
+      margin: 0;
+   }
+@media(min-width: 1010px) {
+.large-hero__subtitle {
+        font-size: 2.9rem
+   }
+  }
+@media(min-width: 800px) {
+.large-hero__subtitle {
+        font-size: 2.3rem
+   }
+  }
+@media(min-width: 600px) {
+.large-hero__subtitle {
+        font-size: 1.7rem
+   }
+  }
+.large-hero--description {
+      color: #FFF;
+      font-size: 1.6rem;
+      font-weight: 100;
+      text-shadow: 2px 2px 0 rgba(0,0,0 .1);
+      max-width: 26rem;
+      margin-left: auto;
+      margin-right: auto;
+   }
+@media(min-width: 600px) {
+.large-hero--description {
+        font-size: 1.8rem
+   }
+  }
 .btn {
   background-color: #2f5572;
   color: #FFF;              /* white */
@@ -453,19 +453,19 @@ a {
   display: inline-block;
 
 }
+/* tell parent & surrounding elements about its needs for padding */
+.btn--orange {               /* underscores and dashes must match the html file */
+     background-color: #d59541;
+  }
 .btn--wider {
     padding: 1.1rem 1.5rem;
   }
+/* vert horiz */
 @media(min-width: 600px) {
 .btn--wider {
       font-size: 1.15rem
   }
   }
-/* vert horiz */
-.btn--orange {               /* underscores and dashes must match the html file */
-     background-color: #d59541;
-  }
-/* tell parent & surrounding elements about its needs for padding */
 .wrapper {
   /* a temp color can help us debug by showing some edges *
     background-color: green;
@@ -477,15 +477,27 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
-.wrapper--no-padding-until-medium {
-    padding-left: 0;
-    padding-right: 0;
+.wrapper--medium {
+    max-width: 900px;
+  }
+.wrapper--b-margin {
+    padding-bottom: 1.5rem;
   }
 @media(min-width: 800px) {
-.wrapper--no-padding-until-medium {
-      padding-left: 15px;
-      padding-right: 15px
+.wrapper--b-margin {
+      padding-bottom: 3.4rem
   }
+  }
+@media(min-width: 600px) {
+.wrapper--b-margin {
+      padding-bottom: 2.3rem
+  }
+  }
+/* a wrapper within another wrapper *
+   * does not need EXTRA padding      */
+.wrapper .wrapper {
+    padding-left: 0;
+    padding-right: 0;
   }
 .wrapper--no-padding-until-large {
     padding-left: 0;
@@ -497,32 +509,47 @@ a {
       padding-right: 15px
   }
   }
-.wrapper .wrapper {
+.wrapper--no-padding-until-medium {
     padding-left: 0;
     padding-right: 0;
   }
-/* a wrapper within another wrapper *
-   * does not need EXTRA padding      */
-.wrapper--b-margin {
-    padding-bottom: 1.5rem;
-  }
-@media(min-width: 600px) {
-.wrapper--b-margin {
-      padding-bottom: 2.3rem
-  }
-  }
 @media(min-width: 800px) {
-.wrapper--b-margin {
-      padding-bottom: 3.4rem
+.wrapper--no-padding-until-medium {
+      padding-left: 15px;
+      padding-right: 15px
   }
-  }
-.wrapper--medium {
-    max-width: 900px;
   }
 .page-section {
   padding: 0.5rem 0;
 
 }
+/* vert horiz */
+@media(min-width: 800px) {
+.page-section {     /* devices larger than small */
+    padding: 4rem 0
+
+}
+  }
+.page-section--no-b-padding-until-medium {
+    padding-bottom: 0;
+  }
+@media(min-width: 800px) {
+.page-section--no-b-padding-until-medium {
+      padding-bottom: 4rem
+  }
+  }
+.page-section--no-b-padding-until-large {
+    padding-bottom: 0;
+  }
+@media(min-width: 1010px) {
+.page-section--no-b-padding-until-large {
+      padding-bottom: 4rem
+  }
+  }
+.page-section--blue {
+    background-color: #2f5572;
+    color: #FFF;
+  }
 .page-section--testimonials {
     background-color: #e0e6ef;
   }
@@ -532,33 +559,6 @@ a {
         background-size: cover /* cover the div that contains it */
   }
   }
-.page-section--blue {
-    background-color: #2f5572;
-    color: #FFF;
-  }
-.page-section--no-b-padding-until-large {
-    padding-bottom: 0;
-  }
-@media(min-width: 1010px) {
-.page-section--no-b-padding-until-large {
-      padding-bottom: 4rem
-  }
-  }
-.page-section--no-b-padding-until-medium {
-    padding-bottom: 0;
-  }
-@media(min-width: 800px) {
-.page-section--no-b-padding-until-medium {
-      padding-bottom: 4rem
-  }
-  }
-@media(min-width: 800px) {
-.page-section {     /* devices larger than small */
-    padding: 4rem 0
-
-}
-  }
-/* vert horiz */
 .section-title {
 
   font-size: 1.8rem;
@@ -566,6 +566,18 @@ a {
   text-align: center;
 
 }
+@media(min-width: 600px) {
+.section-title {
+    font-size: 3.5rem
+
+}
+  }
+.section-title strong {
+    font-weight: 600;
+  }
+.section-title--blue {
+    color: #2f5572;
+  }
 .section-title__icon {
     display: block;
     margin-left: auto;
@@ -582,43 +594,23 @@ a {
       display: inline-block
   }
   }
-.section-title--blue {
-    color: #2f5572;
-  }
-.section-title strong {
-    font-weight: 600;
-  }
-@media(min-width: 600px) {
-.section-title {
-    font-size: 3.5rem
-
-}
-  }
 .headline {
   font-size: 1.5rem;
   font-weight: 300;
   color: #2f5572;
 
 }
-.headline--no-t-margin {
-    margin-top: 0;
+@media(min-width: 600px) {
+.headline {
+    font-size: 2.5rem
+
+}
   }
-.headline--bot_margin_lg {
-    margin-bottom: 1.8em;
+.headline--centered {
+     text-align: center;
   }
-.headline--bot_margin_sm {
-    margin-bottom: .5em;
-  }
-.headline strong {
-    font-weight: 400;
-  }
-.headline--light {
-     font-weight: 100;
-  }
-.headline--narrow {
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
+.headline--orange {
+     color: #d59541;
   }
 .headline--small {
      font-size: 1.33rem;
@@ -628,73 +620,62 @@ a {
        font-size: 2.2rem
   }
   }
-.headline--orange {
-     color: #d59541;
+.headline--narrow {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
   }
-.headline--centered {
-     text-align: center;
+.headline--light {
+     font-weight: 100;
   }
-@media(min-width: 600px) {
-.headline {
-    font-size: 2.5rem
-
-}
+.headline strong {
+    font-weight: 400;
   }
-.row--equal-height-at-medium > div {
-      float: none;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-    }
-@media(min-width: 800px) {
-.row--equal-height-at-medium {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex
+.headline--bot_margin_sm {
+    margin-bottom: .5em;
   }
+.headline--bot_margin_lg {
+    margin-bottom: 1.8em;
   }
-.row--equal-height-at-large > div {
-      float: none;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-    }
-@media(min-width: 1010px) {
-.row--equal-height-at-large {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex
+.headline--no-t-margin {
+    margin-top: 0;
   }
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
   }
-/* Begin Equal Height Rules */
-@media(min-width: 1010px) {
-
-    .row__b-margin-until-large {
-      margin-bottom: 0;
-    }
-
-    .row__large-4 {
-      float: left;
-      width: 33.33%;
-    }
-
-    .row__large-4--larger {
-      width: 37%;
-    }
-
-    .row__large-6 {
-      float: left;
-      width: 50%;
-    }
-
-    .row__large-8 {
-      float: left;
-      width: 66.66%;
-    }
-
-    .row__large-8--smaller {
-      width: 63%;
-    }
+.row--t-padding {
+    padding-top: 80px;
+  }
+/* throw up a color to help debug
+  background-color: yellow;
+  */
+.row--gutters {
+    margin-right: -65px;
+  }
+.row--gutters-large {
+    margin-right: -100px;
+  }
+.row--gutters-small {
+    margin-right: -45px;
+  }
+.row--gutters > div {
+    padding-right: 65px;
+  }
+.row--gutters-large > div {
+    padding-right: 100px;
+  }
+.row--gutters-small > div {
+    padding-right: 45px;
+  }
+/*
+       We could have put "box-sizing: border-box;" here,
+       and it works, but Brad said it also works at the
+       global level so, we added that into _global.css.
+    */
+.row__b-margin-until-medium {
+    margin-bottom: 1rem;
   }
 @media(min-width: 800px) {
 
@@ -725,63 +706,97 @@ a {
       width: 63%;
     }
   }
-.row__b-margin-until-medium {
-    margin-bottom: 1rem;
+@media(min-width: 1010px) {
+
+    .row__b-margin-until-large {
+      margin-bottom: 0;
+    }
+
+    .row__large-4 {
+      float: left;
+      width: 33.33%;
+    }
+
+    .row__large-4--larger {
+      width: 37%;
+    }
+
+    .row__large-6 {
+      float: left;
+      width: 50%;
+    }
+
+    .row__large-8 {
+      float: left;
+      width: 66.66%;
+    }
+
+    .row__large-8--smaller {
+      width: 63%;
+    }
   }
-/*
-       We could have put "box-sizing: border-box;" here,
-       and it works, but Brad said it also works at the
-       global level so, we added that into _global.css.
-    */
-.row--gutters-small > div {
-    padding-right: 45px;
+/* Begin Equal Height Rules */
+@media(min-width: 1010px) {
+.row--equal-height-at-large {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex
   }
-.row--gutters-large > div {
-    padding-right: 100px;
   }
-.row--gutters > div {
-    padding-right: 65px;
+.row--equal-height-at-large > div {
+      float: none;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+@media(min-width: 800px) {
+.row--equal-height-at-medium {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex
   }
-.row--gutters-small {
-    margin-right: -45px;
   }
-.row--gutters-large {
-    margin-right: -100px;
-  }
-.row--gutters {
-    margin-right: -65px;
-  }
-/* throw up a color to help debug
-  background-color: yellow;
-  */
-.row--t-padding {
-    padding-top: 80px;
-  }
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-.generic-content-container p a {
-    font-weight: 700;
-  }
-/* p a is a descendent selector */
+.row--equal-height-at-medium > div {
+      float: none;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+/* p is a type selector */
 .generic-content-container p {
     font-weight: 100;
     line-height: 1.5;
     margin: 0 0 1.65rem 0;  /* top right bottom left */
   }
+/*margin: 1.65rem 0;       * vert horiz */
 @media(min-width: 600px) {
 .generic-content-container p {
       font-size: 1.1rem
   }
   }
-/*margin: 1.65rem 0;       * vert horiz */
-/* p is a type selector */
+/* p a is a descendent selector */
+.generic-content-container p a {
+    font-weight: 700;
+  }
 .feature-item {
   position: relative;
   padding-bottom: 1.0rem;
 }
+@media(min-width: 600px) {
+.feature-item {
+    padding-left: 96px
+}
+  }
+.feature-item__icon {
+    display: block;
+    margin: 0 auto;
+  }
+@media(min-width: 600px) {
+.feature-item__icon {
+      position: absolute;
+      left: 0
+  }
+  }
 .feature-item__title {
     font-size: 1.5rem;
     font-weight: 200;
@@ -796,21 +811,6 @@ a {
       font-size: 1.6rem
   }
   }
-.feature-item__icon {
-    display: block;
-    margin: 0 auto;
-  }
-@media(min-width: 600px) {
-.feature-item__icon {
-      position: absolute;
-      left: 0
-  }
-  }
-@media(min-width: 600px) {
-.feature-item {
-    padding-left: 96px
-}
-  }
 .testimonial {
 
   background-color: rgba(255, 255, 255, .66);
@@ -818,22 +818,24 @@ a {
   margin-bottom: 95px;
 
 }
-.testimonial--last {
-    margin-bottom: 0;
+/* 80 + 15 = half the photo width + the padding
+                          in use on other elements in the project */
+@media(min-width: 800px) {
+.testimonial {
+    padding: 0 1.375rem 1px 1.375rem;
+    margin-bottom: 0      /* <--- Make sure the white background *
+                                   testimonial from extending *
+                                   beyond the others in       *
+                                   medium size and larger.    */
+
+}
   }
-.testimonial__subtitle {
-    color: #d59541;
-    font-size: .75rem;
-    font-weight: 400;
-    text-align: center;
-    margin: .5rem 0 1rem 0; /* top right bottom left */
-  }
-.testimonial__title {
-    color: #2f5572;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 201;
-    margin: 0;
+@media(min-width: 1010px) {
+.testimonial {
+    padding: 0 1.375rem 1px 1.375rem;
+    margin-bottom: 0
+
+}
   }
 .testimonial__photo {
     border-radius: 80px;       /* 1/2 the photo width     */
@@ -850,25 +852,23 @@ a {
     border: 6px solid rgba(255, 255, 255, .66) ;
      /* this border shrinks the photo or crops it and tracks along the radius */
   }
-@media(min-width: 1010px) {
-.testimonial {
-    padding: 0 1.375rem 1px 1.375rem;
-    margin-bottom: 0
-
-}
+.testimonial__title {
+    color: #2f5572;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 201;
+    margin: 0;
   }
-@media(min-width: 800px) {
-.testimonial {
-    padding: 0 1.375rem 1px 1.375rem;
-    margin-bottom: 0      /* <--- Make sure the white background *
-                                   testimonial from extending *
-                                   beyond the others in       *
-                                   medium size and larger.    */
-
-}
+.testimonial__subtitle {
+    color: #d59541;
+    font-size: .75rem;
+    font-weight: 400;
+    text-align: center;
+    margin: .5rem 0 1rem 0; /* top right bottom left */
   }
-/* 80 + 15 = half the photo width + the padding
-                          in use on other elements in the project */
+.testimonial--last {
+    margin-bottom: 0;
+  }
 /* Do not edit app/assets/styles/modules/_sprite.css,
    because it is auto-gened by the 'gulp icons' task.
    Instead, edit gulp/templates/sprite.css
@@ -962,29 +962,14 @@ a {
   z-index: 2;
 
 }
-.site-header__menu_content {
-    display: none;
-  }
 @media(min-width: 800px) {
-.site-header__menu_content {
-      display: block
+.site-header {
+    background-color: rgba(47,85,114, 0.27)
+
+}
   }
-  }
-.site-header__menu-icon {
-    width: 20px;
-    height: 20px;
-    background-color: #FFF;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-@media(min-width: 800px) {
-.site-header__menu-icon {
-      display: none
-  }
-  }
-.site-header__logo__graphic {
-    text-indent: -9999px;
+.site-header__btn-container {
+    float: right;
   }
 .site-header__logo {
     position: absolute;
@@ -1006,14 +991,42 @@ a {
               transform: translateX(0)
   }
   }
-.site-header__btn-container {
-    float: right;
+.site-header__logo__graphic {
+    text-indent: -9999px;
+  }
+.site-header__menu-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #FFF;
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
 @media(min-width: 800px) {
-.site-header {
-    background-color: rgba(47,85,114, 0.27)
-
-}
+.site-header__menu-icon {
+      display: none
+  }
+  }
+.site-header__menu_content {
+    display: none;
+  }
+@media(min-width: 800px) {
+.site-header__menu_content {
+      display: block
+  }
+  }
+.primary-nav--pull-right {
+    float: right;
+  }
+.primary-nav ul {
+  	 margin: 0;
+  	 padding: 0;
+  	 @mixin: clearfix;
+  }
+.primary-nav li {
+  	 list-style: none;
+    float: left;
+  	 padding-right: 25px;
   }
 .primary-nav a {
   	 color: #FFF;
@@ -1021,18 +1034,5 @@ a {
   	 text-decoration: none;
   	 display: block;
   	 padding-top: 15px ;
-  }
-.primary-nav li {
-  	 list-style: none;
-    float: left;
-  	 padding-right: 25px;
-  }
-.primary-nav ul {
-  	 margin: 0;
-  	 padding: 0;
-  	 @mixin: clearfix;
-  }
-.primary-nav--pull-right {
-    float: right;
   }
 

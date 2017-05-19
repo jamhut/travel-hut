@@ -1,15 +1,21 @@
 // Person.js
 console.log("app/assets/scripts/modules/Person.js - enter");
 
-function Person(aname, acolor) {
-  this.myName = aname;
-  this.favColor = acolor;
-  this.greet = function() {
-    console.log("Hello, my name is " + this.myName
-    	         +  " and my fav clr is " + this.favColor
+class Person {
+   constructor(aname, acolor) {
+   this.myName = aname;
+   this.favColor = acolor;
+  }
+
+  greet() {
+    console.log("Yo - I've been babelized! Mi nombre es " + this.myName
+    	         +  " y mi casa es " + this.favColor
     	         +  "." );
   }
 }
 
+// module.exports = Person;  // ECMA5 syntax w Node.JS 'module.exports' keyword.
+export default Person;
+
 console.log("app/assets/scripts/modules/Person.js - exit");
-module.exports = Person;
+

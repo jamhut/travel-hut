@@ -68,24 +68,47 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // Person.js
 console.log("app/assets/scripts/modules/Person.js - enter");
 
-function Person(aname, acolor) {
-  this.myName = aname;
-  this.favColor = acolor;
-  this.greet = function() {
-    console.log("Hello, my name is " + this.myName
-    	         +  " and my fav clr is " + this.favColor
-    	         +  "." );
+var Person = function () {
+  function Person(aname, acolor) {
+    _classCallCheck(this, Person);
+
+    this.myName = aname;
+    this.favColor = acolor;
   }
-}
+
+  _createClass(Person, [{
+    key: "greet",
+    value: function greet() {
+      console.log("Yo - I've been babelized! Mi nombre es " + this.myName + " y mi casa es " + this.favColor + ".");
+    }
+  }]);
+
+  return Person;
+}();
+
+// module.exports = Person;  // ECMA5 syntax w Node.JS 'module.exports' keyword.
+
+
+exports.default = Person;
+
 
 console.log("app/assets/scripts/modules/Person.js - exit");
-module.exports = Person;
-
 
 /***/ }),
 /* 1 */
@@ -10351,26 +10374,63 @@ return jQuery;
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Person2 = __webpack_require__(0);
+
+var _Person3 = _interopRequireDefault(_Person2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 // App.js
 console.log("app/assets/scripts/App.js - enter");
 
 var $ = __webpack_require__(1);
+// var Person = require('./modules/Person') ;  // ECMA5 syntax w Node.JS 'require' keyword.
 
-var Person = __webpack_require__(0) ;
+// ECMA6 syntax.
+
+var Adult = function (_Person) {
+  _inherits(Adult, _Person);
+
+  function Adult() {
+    _classCallCheck(this, Adult);
+
+    return _possibleConstructorReturn(this, (Adult.__proto__ || Object.getPrototypeOf(Adult)).apply(this, arguments));
+  }
+
+  _createClass(Adult, [{
+    key: 'payTaxes',
+    value: function payTaxes() {
+      console.log(this.myName + " owes no more taxes.");
+    }
+  }]);
+
+  return Adult;
+}(_Person3.default);
+
 /*
 alert(" This is a msg for our webpack automation -"
-	 + " coming from app/assets/scripts/App.js"); */
-alert("app/assets/scripts/App.js - testing 23 skeedaddle");
+	 + " coming from app/assets/scripts/App.js");
+alert("app/assets/scripts/App.js - testing 23 skeedaddle"); */
 
-var john = new Person("John Do", "reddish-blue");
-var jane = new Person("Jane So", "bluish-red");
+var john = new _Person3.default("John Do", "reddish-blue");
+var jane = new Adult("Jane So-and-So", "cimmaron");
 john.greet();
 jane.greet();
-
+jane.payTaxes();
 console.log("app/assets/scripts/App.js - exit");
 
-$("h1").remove();
-
+//  $("h1").remove();
 
 /***/ })
 /******/ ]);
