@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -77,41 +77,65 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); // fiename: MobileMenu.js
+// author: Brad Schiff
+
+var _jquery = __webpack_require__(2);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// Person.js
-console.log("app/assets/scripts/modules/Person.js - enter");
+var MobileMenu = function () {
+  function MobileMenu() {
+    _classCallCheck(this, MobileMenu);
 
-var Person = function () {
-  function Person(aname, acolor) {
-    _classCallCheck(this, Person);
-
-    this.myName = aname;
-    this.favColor = acolor;
+    this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
+    this.menuContent = (0, _jquery2.default)(".site-header__menu_content");
+    this.events();
   }
 
-  _createClass(Person, [{
-    key: "greet",
-    value: function greet() {
-      console.log("Yo - I've been babelized! Mi nombre es " + this.myName + " y mi casa es " + this.favColor + ".");
+  _createClass(MobileMenu, [{
+    key: "events",
+    value: function events() {
+      //    console.log(this);
+      this.menuIcon.click(this.toggleTheMenu.bind(this));
+    }
+  }, {
+    key: "toggleTheMenu",
+    value: function toggleTheMenu() {
+      //    console.log("mobile menu was toggled");
+      //    console.log(this);
+      //    alert(this);
+      this.menuContent.toggleClass("site-header__menu_content--is-visible");
     }
   }]);
 
-  return Person;
+  return MobileMenu;
 }();
 
-// module.exports = Person;  // ECMA5 syntax w Node.JS 'module.exports' keyword.
-
-
-exports.default = Person;
-
-
-console.log("app/assets/scripts/modules/Person.js - exit");
+exports.default = MobileMenu;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _MobileMenu = __webpack_require__(0);
+
+var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mobileMenu = new _MobileMenu2.default();
+// MobileMenu in column 8 a var name, so it can be ANYTHING we want.
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10369,68 +10393,6 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Person2 = __webpack_require__(0);
-
-var _Person3 = _interopRequireDefault(_Person2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// App.js
-console.log("app/assets/scripts/App.js - enter");
-
-var $ = __webpack_require__(1);
-// var Person = require('./modules/Person') ;  // ECMA5 syntax w Node.JS 'require' keyword.
-
-// ECMA6 syntax.
-
-var Adult = function (_Person) {
-  _inherits(Adult, _Person);
-
-  function Adult() {
-    _classCallCheck(this, Adult);
-
-    return _possibleConstructorReturn(this, (Adult.__proto__ || Object.getPrototypeOf(Adult)).apply(this, arguments));
-  }
-
-  _createClass(Adult, [{
-    key: 'payTaxes',
-    value: function payTaxes() {
-      console.log(this.myName + " owes no more taxes.");
-    }
-  }]);
-
-  return Adult;
-}(_Person3.default);
-
-/*
-alert(" This is a msg for our webpack automation -"
-	 + " coming from app/assets/scripts/App.js");
-alert("app/assets/scripts/App.js - testing 23 skeedaddle"); */
-
-var john = new _Person3.default("John Do", "reddish-blue");
-var jane = new Adult("Jane So-and-So", "cimmaron");
-john.greet();
-jane.greet();
-jane.payTaxes();
-console.log("app/assets/scripts/App.js - exit");
-
-//  $("h1").remove();
 
 /***/ })
 /******/ ]);

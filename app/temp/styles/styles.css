@@ -1015,6 +1015,9 @@ a {
       display: block
   }
   }
+.site-header__menu_content--is-visible {
+      display: block;
+    }
 .primary-nav--pull-right {
     float: right;
   }
