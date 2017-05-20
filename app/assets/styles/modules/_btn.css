@@ -1,21 +1,20 @@
 .btn {
   background-color: $mainBlue;
-  color: #FFF;              /* white */
-  text-decoration: none;    /* remove the underline */
-  padding: .75rem 1.05rem;  /* .75 vert   1.05 horiz */
-  display: inline-block;    /* tell parent & surrounding elements about its needs for padding */
+  color: #FFF;
+  text-decoration: none;
+  padding: .75rem 1.2rem;
+  display: inline-block;
 
-  &--orange {               /* underscores and dashes must match the html file */
-     background-color: $mainOrange;
+  &--orange {
+    background-color: $mainOrange;
   }
 
-  &--wider {
-    padding: 1.1rem 1.5rem;  /* vert horiz */
+  &--large {
+    padding: 1.1rem 1.9rem;
 
     @mixin atSmall {
-      font-size: 1.15rem;
+      font-size: 1.25rem;
     }
   }
 
 }
-

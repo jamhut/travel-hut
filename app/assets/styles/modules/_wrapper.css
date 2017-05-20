@@ -1,43 +1,13 @@
 .wrapper {
-  /* a temp color can help us debug by showing some edges *
-    background-color: green;
-  */
-  overflow: hidden;  /* hide things that land 'out of bounds' */
-  padding-left: 15px;
-  padding-right: 15px;
-  max-width: 1230px;
+  overflow: hidden;
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 1236px;
   margin-left: auto;
   margin-right: auto;
 
   &--medium {
-    max-width: 900px;
-  }
-
-  &--b-margin {
-    padding-bottom: 1.5rem;
-    @mixin atMedium {
-      padding-bottom: 3.4rem;
-    }
-    @mixin atSmall {
-      padding-bottom: 2.3rem;
-    }
-  }
-
-  /* a wrapper within another wrapper *
-   * does not need EXTRA padding      */
-  .wrapper {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  &--no-padding-until-large {
-    padding-left: 0;
-    padding-right: 0;
-
-    @mixin atLarge {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
+    max-width: 976px;
   }
 
   &--no-padding-until-medium {
@@ -45,8 +15,32 @@
     padding-right: 0;
 
     @mixin atMedium {
-      padding-left: 15px;
-      padding-right: 15px;
+      padding-left: 18px;
+      padding-right: 18px;
     }
   }
+
+  &--no-padding-until-large {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atLarge {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+
+  .wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &--b-margin {
+    margin-bottom: 1rem;
+
+    @mixin atSmall {
+      margin-bottom: 3.875rem;
+    }
+  }
+
 }

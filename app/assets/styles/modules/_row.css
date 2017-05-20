@@ -6,10 +6,6 @@
     padding-top: 80px;
   }
 
-  /* throw up a color to help debug
-  background-color: yellow;
-  */
-
   &--gutters {
     margin-right: -65px;
   }
@@ -33,12 +29,6 @@
   &--gutters-small > div {
     padding-right: 45px;
   }
-
-    /*
-       We could have put "box-sizing: border-box;" here,
-       and it works, but Brad said it also works at the
-       global level so, we added that into _global.css.
-    */
 
   &__b-margin-until-medium {
     margin-bottom: 1rem;
@@ -105,19 +95,8 @@
     }
 
   }
-
+  
   /* Begin Equal Height Rules */
-  &--equal-height-at-large {
-    @mixin atLarge {
-      display: flex;
-    }
-
-    & > div {
-      float: none;
-      display: flex;
-    }
-  }
-
   &--equal-height-at-medium {
     @mixin atMedium {
       display: flex;
@@ -127,6 +106,19 @@
       float: none;
       display: flex;
     }
+
+  }
+
+  &--equal-height-at-large {
+    @mixin atLarge {
+      display: flex;
+    }
+
+    & > div {
+      float: none;
+      display: flex;
+    }
+
   }
 
 }

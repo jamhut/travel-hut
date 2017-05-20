@@ -3,15 +3,14 @@
   position: absolute;
   width: 100%;
   z-index: 2;
-  /* linear is the default, but we like ease-out */
-  transition: background-color .25s ease-out;
+  transition: background-color .3s ease-out;
 
   &--is-expanded {
     background-color: rgba($mainBlue, .55);
   }
 
   @mixin atMedium {
-    background-color: rgba($mainBlue, .27);
+    background-color: rgba($mainBlue, .3);
   }
 
   &__btn-container {
@@ -24,12 +23,10 @@
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%) scale(.75);
-    /* by default, the transform-origin is set at 50% 50%,
-       which maintains the ctr of a thing in its "original" loc. */
+    transform: translateX(-50%) scale(.8);
     transform-origin: 50% 0;
     background-color: $mainBlue;
-    padding: 28px 35px;
+    padding: 25px 36px;
 
     @mixin atMedium {
       left: auto;
@@ -43,33 +40,81 @@
 
   &__menu-icon {
     width: 20px;
-    height: 20px;
-    background-color: #FFF;
+    height: 19px; /* this was 20, but it makes the
+                  * bottom bar move up and that
+                  * spaces them be equally together */
+    /*background-color: #FFF;*/
     position: absolute;
     z-index: 10;
     top: 10px;
     right: 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;   /* same as parent */
+      height: 3px;
+      background-color: #FFF;
+      transform-origin: 0 0;
+      transition: transform .11s ease-out;
+    }
+
+    &__middle {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;   /* same as parent */
+      height: 3px;
+      background-color: #FFF;
+      transition: opacity    .3s ease-out;
+      transition: transform .15s ease-out;
+      transform-origin: 0 50%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;   /* same as parent */
+      height: 3px;
+      background-color: #FFF;
+      transform-origin: 0 100%;
+      transition: transform .07s ease-out;
+    }
 
     @mixin atMedium {
       display: none;
     }
   }
 
+  &__menu-icon--close-x {
+    &::before {
+      transform: rotate(45deg) scaleX(1.25);
+    }
+
+    .site-header__menu-icon__middle {
+      /* opacity: 0; */
+      transform: scaleX(0);
+    }
+
+    &::after {
+      transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+    }
+  }
+
   &__menu-content {
     opacity: 0;
-    transform: scale(1.4);
-    transition: all .25s ease-out;
-    /* transition: opacity .3s ; */
+    transform: scale(1.2);
+    transition: all .3s ease-out;
     position: relative;
-    z-index: -20;
+    z-index: -10;
     padding-top: 90px;
     text-align: center;
-    /* the "z-index: minus num" along with "position: relative;"
-       prevents the user from clicking "invisible" things which may be
-       technically "displayed" but with "opacity: 0;" it is invisible. */
 
     @mixin atMedium {
-      /* display: block; */
       opacity: 1;
       z-index: 1;
       padding-top: 0;

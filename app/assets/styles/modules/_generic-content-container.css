@@ -1,18 +1,15 @@
 .generic-content-container {
-
-  /* p is a type selector */
+  
   p {
-    font-weight: 100;
-    line-height: 1.5;
-    margin: 0 0 1.65rem 0;  /* top right bottom left */
-  /*margin: 1.65rem 0;       * vert horiz */
+    font-weight: 300;
+    line-height: 1.65;
+    margin: 0 0 1.8rem 0;
 
     @mixin atSmall {
-      font-size: 1.1rem;
+      font-size: 1.125rem;
     }
   }
 
-  /* p a is a descendent selector */
   p a {
     font-weight: 700;
   }
