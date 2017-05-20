@@ -42,7 +42,7 @@
     width: 20px;
     height: 19px; /* this was 20, but it makes the
                   * bottom bar move up and that
-                  * spaces them be equally together */
+                  * spaces them equally apart */
     /*background-color: #FFF;*/
     position: absolute;
     z-index: 10;
@@ -58,7 +58,7 @@
       height: 3px;
       background-color: #FFF;
       transform-origin: 0 0;
-      transition: transform .11s ease-out;
+      transition: transform .3s ease-out; /*  .11s */
     }
 
     &__middle {
@@ -68,9 +68,9 @@
       width: 20px;   /* same as parent */
       height: 3px;
       background-color: #FFF;
-      transition: opacity    .3s ease-out;
-      transition: transform .15s ease-out;
-      transform-origin: 0 50%;
+      /*transition: opacity    1s ease-out; /*  .3s */
+      transition: transform  .2s ease-out; /* .15s */
+      /* transform-origin: 0 50%; */
     }
 
     &::after {
@@ -82,7 +82,7 @@
       height: 3px;
       background-color: #FFF;
       transform-origin: 0 100%;
-      transition: transform .07s ease-out;
+      transition: transform .3s ease-out; /*  .07s */
     }
 
     @mixin atMedium {
@@ -96,7 +96,6 @@
     }
 
     .site-header__menu-icon__middle {
-      /* opacity: 0; */
       transform: scaleX(0);
     }
 
