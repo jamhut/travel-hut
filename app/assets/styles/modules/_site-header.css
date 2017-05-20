@@ -3,13 +3,21 @@
   position: absolute;
   width: 100%;
   z-index: 2;
+  /* linear is the default, but we like ease-out */
+  transition: background-color .25s ease-out;
+
+  &--is-expanded {
+    background-color: rgba($mainBlue, .55);
+  }
 
   @mixin atMedium {
-    background-color: rgba($mainBlue, 0.27);
+    background-color: rgba($mainBlue, .27);
   }
 
   &__btn-container {
-    float: right;
+    @mixin atMedium {
+      float: right;
+    }
   }
 
   &__logo {
@@ -22,11 +30,13 @@
     transform-origin: 50% 0;
     background-color: $mainBlue;
     padding: 28px 35px;
+
     @mixin atMedium {
       left: auto;
       transform: translateX(0);
     }
   }
+
   &__logo__graphic {
     text-indent: -9999px;
   }
@@ -36,6 +46,7 @@
     height: 20px;
     background-color: #FFF;
     position: absolute;
+    z-index: 10;
     top: 10px;
     right: 10px;
 
@@ -44,15 +55,31 @@
     }
   }
 
-  &__menu_content {
-    display: none;
+  &__menu-content {
+    opacity: 0;
+    transform: scale(1.4);
+    transition: all .25s ease-out;
+    /* transition: opacity .3s ; */
+    position: relative;
+    z-index: -20;
+    padding-top: 90px;
+    text-align: center;
+    /* the "z-index: minus num" along with "position: relative;"
+       prevents the user from clicking "invisible" things which may be
+       technically "displayed" but with "opacity: 0;" it is invisible. */
+
     @mixin atMedium {
-      display: block;
+      /* display: block; */
+      opacity: 1;
+      z-index: 1;
+      padding-top: 0;
+      transform: scale(1);
     }
 
     &--is-visible {
-      display: block;
+      opacity: 1;
+      z-index: 1;
+      transform: scale(1);
     }
   }
-
 }

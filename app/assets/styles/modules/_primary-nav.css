@@ -1,26 +1,55 @@
 .primary-nav {
 
+  padding-top: 10px;
+  @mixin atMedium {
+  padding-top: 0;
+  }
+
   &--pull-right {
-    float: right;
+    @mixin atMedium {
+      float: right;
+    }
   }
 
   ul {
-  	 margin: 0;
-  	 padding: 0;
-  	 @mixin: clearfix;
+    margin: 0;
+    padding: 0;
+    @mixin clearfix;
   }
 
   li {
-  	 list-style: none;
-    float: left;
-  	 padding-right: 25px;
+    list-style: none;
+    display: inline-block;
+    padding-right: 7px;
+
+    @mixin atMedium {
+      padding-right: 25px;
+      float: left;
+      display: block;
+    }
+  }
+
+  li:last-child {
+    padding-right: 0;
+    @mixin atMedium {
+      padding-right: 25px;
+    }
   }
 
   a {
-  	 color: #FFF;
-  	 font-weight: 100;
-  	 text-decoration: none;
-  	 display: block;
-  	 padding-top: 15px ;
+    color: #FFF;
+    font-weight: 100;
+    text-decoration: none;
+    display: block;
+    /* padding-top: 15px ; he was using "padding: 12px 0;" but I was using padding-top... */
+    padding: 6px 9px;
+    font-size: .8rem;
+    background-color: rgba($mainBlue, .7);
+
+    @mixin atMedium {
+      padding: 15px 0;
+      font-size: 1rem;
+      background-color: transparent;
+    }
   }
 }
