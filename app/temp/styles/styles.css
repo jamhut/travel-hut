@@ -1354,3 +1354,19 @@ a {
       background-color: transparent
   }
   }
+
+.reveal-item {
+  opacity: 0;
+  /*transition: opacity 1.25s ease-out;*/
+  -webkit-transition: all 1.25s ease-out;
+  transition: all 1.25s ease-out;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+
+}
+
+.reveal-item--is-visible {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
