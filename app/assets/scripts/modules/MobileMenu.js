@@ -5,6 +5,7 @@ class MobileMenu {
     this.siteHeader = $(".site-header");
     this.menuIcon = $(".site-header__menu-icon");
     this.menuContent = $(".site-header__menu-content");
+    // this.siteHeader, this.nebuItem etc are each NOW a JQuery object.
     this.events();
   }
 
