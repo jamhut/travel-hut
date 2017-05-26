@@ -583,6 +583,10 @@ a {
     max-width: 976px;
   }
 
+.wrapper--narrow {
+    max-width: 470px;
+  }
+
 .wrapper--no-padding-until-medium {
     padding-left: 0;
     padding-right: 0;
@@ -902,11 +906,16 @@ a {
   }
 
 .section-title strong {
-    font-weight: 500;
+    font-weight: 400;
   }
 
 .section-title--blue {
     color: #2f5572;
+  }
+
+.section-title--less-margin {
+    margin-bottom: 1.3rem;
+    margin-top: 0;
   }
 
 .section-title__icon {
@@ -1206,10 +1215,10 @@ a {
       background-color: #FFF;
       -webkit-transform-origin: 0 0;
               transform-origin: 0 0;
-      -webkit-transition: -webkit-transform .3s ease-out;
-      transition: -webkit-transform .3s ease-out;
-      transition: transform .3s ease-out;
-      transition: transform .3s ease-out, -webkit-transform .3s ease-out; /*  .11s */
+      -webkit-transition: -webkit-transform .25s ease-out;
+      transition: -webkit-transform .25s ease-out;
+      transition: transform .25s ease-out;
+      transition: transform .25s ease-out, -webkit-transform .25s ease-out; /*  .11s */
     }
 
 .site-header__menu-icon__middle {
@@ -1220,10 +1229,10 @@ a {
       height: 3px;
       background-color: #FFF;
       /*transition: opacity    1s ease-out; /*  .3s */
-      -webkit-transition: -webkit-transform  .2s ease-out;
-      transition: -webkit-transform  .2s ease-out;
-      transition: transform  .2s ease-out;
-      transition: transform  .2s ease-out, -webkit-transform  .2s ease-out; /* .15s */
+      -webkit-transition: -webkit-transform  .5s  ease-out;
+      transition: -webkit-transform  .5s  ease-out;
+      transition: transform  .5s  ease-out;
+      transition: transform  .5s  ease-out, -webkit-transform  .5s  ease-out; /* .15s */
       /* transform-origin: 0 50%; */
     }
 
@@ -1237,10 +1246,10 @@ a {
       background-color: #FFF;
       -webkit-transform-origin: 0 100%;
               transform-origin: 0 100%;
-      -webkit-transition: -webkit-transform .3s ease-out;
-      transition: -webkit-transform .3s ease-out;
-      transition: transform .3s ease-out;
-      transition: transform .3s ease-out, -webkit-transform .3s ease-out; /*  .07s */
+      -webkit-transition: -webkit-transform .25s ease-out;
+      transition: -webkit-transform .25s ease-out;
+      transition: transform .25s ease-out;
+      transition: transform .25s ease-out, -webkit-transform .25s ease-out; /*  .07s */
     }
 
 @media (min-width: 800px) {
@@ -1388,3 +1397,91 @@ a {
             transform: scale(1);
     opacity: 1;
   }
+
+.modal {
+  position: fixed;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, .94);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;            /* 100% see-through */
+  visibility: hidden;    /* not visible. not accessible. */
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+
+}
+
+.modal--is-visible {
+    visibility: visible;     /* completely visible */
+    opacity: 1;              /* zero % see through */
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+.modal__inner {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); /* the item's own height */
+
+  }
+
+.modal__description {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+.modal__close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 2.3rem;
+    -webkit-transform: scaleX(1.5);
+            transform: scaleX(1.5);
+    -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+    color: #2f5572;
+    cursor: pointer;
+  }
+
+.modal__close:hover {
+      color: #d59541;
+    }
+
+.social-icons {
+  text-align: center;
+
+}
+
+.social-icons__icon {
+    background-color: #d59541;
+    display: inline-block;
+    margin: 0 5px 5px 5px;
+    width: 33%;
+    height: 72px;
+    position: relative;
+  }
+
+@media (min-width: 530px) {
+
+.social-icons__icon {
+      width: 72px;
+      margin: 0 5px
+  }
+  }
+
+.social-icons__icon .icon {
+      display: block;
+      position: absolute;
+      left: 50%;  /* the object that contains the icon */
+      top: 50%;   /* the object that contains the icon */
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); /* the icon's own size */
+    }

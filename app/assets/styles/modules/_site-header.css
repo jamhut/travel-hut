@@ -68,7 +68,7 @@
       height: 3px;
       background-color: #FFF;
       transform-origin: 0 0;
-      transition: transform .3s ease-out; /*  .11s */
+      transition: transform .25s ease-out; /*  .11s */
     }
 
     &__middle {
@@ -79,7 +79,7 @@
       height: 3px;
       background-color: #FFF;
       /*transition: opacity    1s ease-out; /*  .3s */
-      transition: transform  .2s ease-out; /* .15s */
+      transition: transform  .5s  ease-out; /* .15s */
       /* transform-origin: 0 50%; */
     }
 
@@ -92,7 +92,7 @@
       height: 3px;
       background-color: #FFF;
       transform-origin: 0 100%;
-      transition: transform .3s ease-out; /*  .07s */
+      transition: transform .25s ease-out; /*  .07s */
     }
 
     @mixin atMedium {
