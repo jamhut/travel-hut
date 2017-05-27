@@ -11,4 +11,4 @@ var mobileMenu = new MobileMenu();
 var rvlFeatureItems = new RevealOnScroll($(".feature-item"), "85%");
 var rvlTestimonials = new RevealOnScroll($(".testimonial"), "60%");
 var stickyHeader = new StickyHeader();
-var modal = new Modal() ;
+var modal = new Modal();

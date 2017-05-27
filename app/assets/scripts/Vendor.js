@@ -1,0 +1,2 @@
+// Vendor.js
+import 'lazysizes' ;
