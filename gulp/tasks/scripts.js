@@ -2,7 +2,7 @@ var gulp = require('gulp')
   , webpack = require('webpack')
   ;
 
-gulp.task('scripts', function(callback) {
+gulp.task('scripts', ['modernizr'], function(callback) {
  console.log("./gulp/tasks/scripts.js - telling webpack to process ../../webpack.config.js");
   webpack(require('../../webpack.config.js'), function(err, stats) {
     if (err) {

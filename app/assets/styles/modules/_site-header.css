@@ -39,7 +39,7 @@
       transform: translateX(0);
 
       .site-header--dark & {
-        transform: scale(.64);
+        transform: scale(.645); /* made a VERY Slight adjustment at the end of lesson 55 */
       }
     }
   }

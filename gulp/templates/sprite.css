@@ -1,6 +1,7 @@
 /* Do not edit app/assets/styles/modules/_sprite.css,
    because it is auto-gened by the 'gulp icons' task.
-   Instead, edit gulp/templates/sprite.css
+   Instead, edit gulp/templates/sprite.css, because
+   it is the one that outputs some .css classes / selectors / stuff
 */
 
 {{#shapes}}
@@ -8,6 +9,12 @@
     .icon {
       background-image: url('/assets/images/sprites/{{{sprite}}}');
     }
+
+    .no-svg .icon {
+      background-image:
+        url('/assets/images/sprites/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}');
+    }
+
   {{/first}}
 
   .icon--{{base}} {
